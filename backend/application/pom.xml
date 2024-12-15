@@ -5,11 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>net.erikwittemeier.sporbs</groupId>
-        <artifactId>backend</artifactId>
+        <artifactId>sporbs-backend</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>application</artifactId>
+    <artifactId>sporbs-application</artifactId>
     <packaging>pom</packaging>
     <modules>
         <module>service</module>
