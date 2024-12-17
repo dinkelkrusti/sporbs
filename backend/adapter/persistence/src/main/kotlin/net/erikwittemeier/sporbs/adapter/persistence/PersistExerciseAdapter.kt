@@ -6,16 +6,12 @@ import org.springframework.stereotype.Component
 import java.util.*
 
 @Component
-class DummyPersistExerciseAdapter : PersistExercisePort {
+class PersistExerciseAdapter(private val dao: ExerciseDao) : PersistExercisePort {
     override fun save(exercise: Exercise) {
-        println("Persisting exercise")
-    }
-
-    override fun update(exercise: Exercise) {
-        println("Persisting exercise")
+        dao.save(exercise.toEntity())
     }
 
     override fun deleteById(id: UUID) {
-        println("Persisting exercise")
+        dao.deleteById(id)
     }
 }

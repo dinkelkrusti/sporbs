@@ -11,6 +11,6 @@ class UpdateExerciseService(
     private val persistence: PersistExercisePort,
 ) : UpdateExerciseUseCase {
     override fun withInput(input: UpdateExerciseUseCase.Input) {
-        exercises.byId(input.id)?.let { persistence.update(it) }
+        exercises.byId(input.id)?.let { persistence.save(it) }
     }
 }
