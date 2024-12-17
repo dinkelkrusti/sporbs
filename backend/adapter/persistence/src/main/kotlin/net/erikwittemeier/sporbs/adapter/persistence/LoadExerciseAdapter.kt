@@ -4,18 +4,19 @@ import net.erikwittemeier.sporbs.application.port.out.LoadExercisePort
 import net.erikwittemeier.sporbs.domain.exercise.Exercise
 import org.springframework.stereotype.Component
 import java.util.UUID
+import kotlin.jvm.optionals.getOrNull
 
 @Component
-class DummyLoadExerciseAdapter : LoadExercisePort {
+class LoadExerciseAdapter(private val dao: ExerciseDao) : LoadExercisePort {
     override fun byId(exerciseId: UUID): Exercise? {
-        return null
+        return dao.findById(exerciseId).getOrNull()?.toDomain()
     }
 
     override fun byName(exerciseName: String): Exercise? {
-        return null
+        return dao.findByName(exerciseName)?.toDomain()
     }
 
     override fun all(): List<Exercise> {
-        return emptyList()
+        return dao.findAll().map { it.toDomain() }
     }
 }
