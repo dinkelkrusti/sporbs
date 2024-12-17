@@ -3,7 +3,7 @@ package net.erikwittemeier.sporbs
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 
-@SpringBootApplication(scanBasePackages = ["com.erikwittemeier.sporbs"])
+@SpringBootApplication(scanBasePackages = ["net.erikwittemeier.sporbs"])
 open class Application
 
 fun main(args: Array<String>) {
