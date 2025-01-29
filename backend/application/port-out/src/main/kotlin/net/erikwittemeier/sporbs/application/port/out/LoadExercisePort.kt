@@ -1,7 +1,7 @@
 package net.erikwittemeier.sporbs.application.port.out
 
 import net.erikwittemeier.sporbs.domain.exercise.Exercise
-import java.util.*
+import java.util.UUID
 
 interface LoadExercisePort {
     fun byId(exerciseId: UUID): Exercise?
